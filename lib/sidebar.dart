@@ -62,7 +62,7 @@ Widget sidebaricon(title, assetName, inTitle, double size, Color color,
                             child: Text(
                               inTitle,
                               style: TextStyle(
-                                color: color,
+                                color: Color(0xffffffff),
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

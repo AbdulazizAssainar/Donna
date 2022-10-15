@@ -21,6 +21,7 @@ dependencies:
   flutter_svg: ^1.1.5
   hovering: ^1.0.4
   system_theme: ^2.0.0
+  moor: ^4.6.1+1
   
 
 dev_dependencies:
