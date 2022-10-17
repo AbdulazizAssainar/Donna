@@ -1,13 +1,9 @@
-// ignore_for_file: unused_local_variable, unnecessary_import, unused_import, prefer_const_constructors
+// ignore_for_file: prefer_const_constructors
 
-import 'dart:ui';
 import 'package:donna/Cafe-Restaurant/home.dart';
 import 'package:donna/class/package.dart';
 import 'package:donna/class/theme.dart';
 import 'package:donna/class/widgets.dart';
-
-import 'class/voids.dart';
-import 'startup.dart';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 

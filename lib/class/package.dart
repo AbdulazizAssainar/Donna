@@ -4,7 +4,7 @@ import 'package:donna/class/theme.dart';
 import 'package:flutter/material.dart';
 import 'sidebar.dart';
 
-late String theme, language, settingup;
+late String language, settingup;
 late TextAlign apptextAlign;
 late double spacingwidth, screenwidth, screenheight;
 late Widget sidebarChildrenTop, sidebarChildrenBottom;

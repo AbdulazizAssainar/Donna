@@ -34,7 +34,7 @@ void loadtheme() {
   buttonOffWhite = Color(0xffF9FBFC);
   buttonDarkGrey = Color(0xff060403);
 
-  if (isDarkMode) {
+  if (!isDarkMode) {
     sidebarbg = Color(0xffEFF1F3);
     innerbodybg = Color(0xffffffff);
     outerbodybg = Color(0xffEFF1F3);
@@ -44,7 +44,7 @@ void loadtheme() {
     sidebarIconsColor = Color(0xff143340);
   }
 
-  if (!isDarkMode) {
+  if (isDarkMode) {
     sidebarbg = Color(0xff060403);
     innerbodybg = Color(0xff000000);
     outerbodybg = Color(0xff060403);

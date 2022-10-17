@@ -1,7 +1,4 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:ui';
-
 import 'package:donna/class/package.dart';
 import 'package:donna/class/theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,7 +6,6 @@ import 'package:flutter/cupertino.dart';
 void loadprograminfo() {
   settingup = 'loading app info';
   language = 'english';
-  theme = 'light';
   spacingwidth = screenwidth * 0.75;
   loadtheme();
   loadlanguage();

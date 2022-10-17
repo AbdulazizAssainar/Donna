@@ -1,15 +1,10 @@
-// ignore_for_file: unused_local_variable, unnecessary_import, prefer_const_constructors, unused_import, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'dart:io';
-import 'dart:ui';
 import 'package:donna/class/package.dart';
 import 'package:donna/class/sidebar.dart';
 import 'package:donna/class/theme.dart';
-import 'package:donna/login.dart';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'package:donna/class/voids.dart';
-import 'package:sticky_headers/sticky_headers.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,8 +39,8 @@ class _CRHomePageState extends State<CRHomePage> {
           body(
               Column(
                 children: [
-                  sidebaricon(theme, "assets/icons/business_letter_bg.svg", "D",
-                      30, Color(0xff852856), Color(0x00000000), 20, () {}),
+                  sidebaricon("Donna", "assets/icons/business_letter_bg.svg",
+                      "D", 30, Color(0xff852856), Color(0x00000000), 20, () {}),
                   padding(15, 0, 0, 0),
                   sidebaricon("Sales", "assets/icons/home.svg", "", 20,
                       sidebarIconsColor, shadowColor, 20, () {}),
