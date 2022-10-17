@@ -62,7 +62,7 @@ class _CRHomePageState extends State<CRHomePage> {
                       20,
                       () {}),
                   sidebaricon(
-                      "Mananger",
+                      "Manager",
                       "assets/icons/admin_panel_settings.svg",
                       "",
                       20,
