@@ -2,12 +2,13 @@
 
 import 'dart:io';
 import 'dart:ui';
-import 'package:donna/package.dart';
+import 'package:donna/class/package.dart';
+import 'package:donna/class/sidebar.dart';
+import 'package:donna/class/theme.dart';
 import 'package:donna/login.dart';
-import 'package:donna/sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
-import 'package:donna/voids.dart';
+import 'package:donna/class/voids.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 
 void main() {
@@ -23,9 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return materialApp(
-      const CRHomePage(),
-    );
+    return materialApp(CRHomePage());
   }
 }
 
@@ -45,8 +44,8 @@ class _CRHomePageState extends State<CRHomePage> {
           body(
               Column(
                 children: [
-                  sidebaricon("Donna", "assets/icons/business_letter_bg.svg",
-                      "D", 30, Color(0xff852856), Color(0x00000000), 20, () {}),
+                  sidebaricon(theme, "assets/icons/business_letter_bg.svg", "D",
+                      30, Color(0xff852856), Color(0x00000000), 20, () {}),
                   padding(15, 0, 0, 0),
                   sidebaricon("Sales", "assets/icons/home.svg", "", 20,
                       sidebarIconsColor, shadowColor, 20, () {}),

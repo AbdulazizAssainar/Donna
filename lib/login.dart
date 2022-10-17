@@ -2,9 +2,11 @@
 
 import 'dart:ui';
 import 'package:donna/Cafe-Restaurant/home.dart';
+import 'package:donna/class/package.dart';
+import 'package:donna/class/theme.dart';
+import 'package:donna/class/widgets.dart';
 
-import 'package.dart';
-import 'voids.dart';
+import 'class/voids.dart';
 import 'startup.dart';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
@@ -60,12 +62,12 @@ class _LoginPageState extends State<LoginPage> {
             maintextfield(
                 screenwidth * 0.2, 'Password', Color(0x80ffffff), true),
             padding(20, 0, 0, 0),
-            mainbutton(() {
+            button(() {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => CRHomePage()),
               );
-            }, "LOGIN", 25, 55, 120, FontWeight.w300),
+            }, true, "LOGIN", false, ""),
           ],
         ),
       ),

@@ -2,15 +2,16 @@
 
 import 'dart:io';
 import 'dart:ui';
+import 'package:donna/class/package.dart';
+import 'package:donna/class/theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '/package.dart';
 import 'Cafe-Restaurant/home.dart';
 import 'login.dart';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 
-import 'voids.dart';
+import 'class/voids.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,9 +26,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return materialApp(
-      const StartupPage(),
-    );
+    return MaterialApp(themeMode: ThemeMode.light, home: StartupPage());
   }
 }
 
@@ -41,6 +40,7 @@ class StartupPage extends StatefulWidget {
 class _StartupPageState extends State<StartupPage> {
   @override
   Widget build(BuildContext context) {
+    appTheme = ThemeMode.light;
     screenheight = MediaQuery.of(context).size.height;
     screenwidth = MediaQuery.of(context).size.width;
 

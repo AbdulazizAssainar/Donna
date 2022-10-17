@@ -1,29 +1,16 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:donna/class/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:system_theme/system_theme.dart';
-
 import 'sidebar.dart';
 
 late String theme, language, settingup;
 late TextAlign apptextAlign;
-late Color color1, color2, color3, color4, color5;
-late Color sidebarbg,
-    innerbodybg,
-    outerbodybg,
-    buttonAction,
-    buttonWhite,
-    buttonBlack,
-    buttonOffWhite,
-    buttonDarkGrey,
-    borderColor,
-    shadowColor,
-    sidebarIconsColorActive,
-    sidebarIconsColor;
 late double spacingwidth, screenwidth, screenheight;
 late Widget sidebarChildrenTop, sidebarChildrenBottom;
 
-final isdarkMode = SystemTheme.isDarkMode;
+late ThemeMode appTheme;
+bool isDarkMode = appTheme == ThemeMode.dark;
 
 Widget padding(double top, double bottom, double left, double right) => Padding(
     padding:
@@ -43,38 +30,6 @@ Widget mainimage(name, double width, double height) => Image.asset(
       width: width,
       height: height,
     );
-
-Widget mainbutton(onPressed, text, double fontSize, double height, double width,
-        fontWeight) =>
-    SizedBox(
-        width: width,
-        height: height,
-        child: TextButton(
-          onPressed: onPressed,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: color1,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-          ),
-          child: maintext(text, fontSize, fontWeight, color5),
-        ));
-
-Widget subbutton(onPressed, text, double fontSize, double height, double width,
-        fontWeight) =>
-    SizedBox(
-        width: width,
-        height: height,
-        child: TextButton(
-          onPressed: onPressed,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: color5,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-          ),
-          child: maintext(text, fontSize, fontWeight, color1),
-        ));
 
 Widget maintextfield(width, labelText, bgcolor, ispassword) => SizedBox(
       width: width,
@@ -160,21 +115,3 @@ Widget body(sidebar1ChildrenTop, sidebar1ChildrenBottom, sidebar2ChildrenTop,
         )
       ],
     );
-
-themeDataLight() => ThemeData(
-      backgroundColor: Color(0xffffffff),
-      scaffoldBackgroundColor: Color(0xffffffff),
-      brightness: Brightness.light,
-    );
-
-themeDataDark() => ThemeData(
-      backgroundColor: Color(0xff000000),
-      scaffoldBackgroundColor: Color(0xff000000),
-      brightness: Brightness.dark,
-    );
-
-materialApp(home) => MaterialApp(
-    themeMode: ThemeMode.light,
-    theme: themeDataLight(),
-    darkTheme: themeDataDark(),
-    home: home);
