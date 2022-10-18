@@ -14,34 +14,37 @@ late Color sidebarbg,
     borderColor,
     shadowColor,
     sidebarIconsColorActive,
-    sidebarIconsColor;
+    sidebarIconsColor,
+    hoverColor;
 
 Color action1 = Color(0xFFC83D82),
-    action2 = Color(0xFF707070),
+    action2 = Color(0xFF852856),
     white1 = Color(0xFFFFFFFF),
     white2 = Color(0xFFF9FBFC),
     white3 = Color(0xFFEEEDF2),
     black1 = Color(0xFF100E0C),
     black2 = Color(0xFF060403),
-    black3 = Color(0xFF000000);
+    black3 = Color(0xFF000000),
+    blue = Color(0xFF143340);
 
 void loadtheme() {
   settingup = 'loading app theme';
 
-  buttonAction = Color(0xff852856);
-  buttonWhite = Color(0xffffffff);
-  buttonBlack = Color(0xff000000);
-  buttonOffWhite = Color(0xffF9FBFC);
-  buttonDarkGrey = Color(0xff060403);
+  buttonAction = action2;
+  buttonWhite = white1;
+  buttonBlack = black3;
+  buttonOffWhite = white3;
+  buttonDarkGrey = black1;
 
   if (!isDarkMode) {
-    sidebarbg = Color(0xffEFF1F3);
-    innerbodybg = Color(0xffffffff);
-    outerbodybg = Color(0xffEFF1F3);
-    borderColor = Color(0xffEEEDF2);
-    shadowColor = Color(0x33000000);
-    sidebarIconsColorActive = Color(0xff852856);
-    sidebarIconsColor = Color(0xff143340);
+    sidebarbg = white2;
+    innerbodybg = white1;
+    outerbodybg = white2;
+    borderColor = white3;
+    shadowColor = Color(0x33100E0C);
+    sidebarIconsColorActive = action2;
+    sidebarIconsColor = blue;
+    hoverColor = Color(0x0D000000);
   }
 
   if (isDarkMode) {
@@ -52,6 +55,7 @@ void loadtheme() {
     shadowColor = Color(0x33ffffff);
     sidebarIconsColorActive = Color(0xffC83D82);
     sidebarIconsColor = Color(0xffC3C3C3);
+    hoverColor = Color(0x0Dffffff);
   }
 }
 

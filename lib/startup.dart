@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:donna/Cafe-Restaurant/home.dart';
+import 'package:donna/class/artboard.dart';
 import 'package:donna/class/package.dart';
 import 'package:donna/class/theme.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +72,7 @@ class _StartupPageState extends State<StartupPage> {
             Text(
               settingup,
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 14,
                 color: Color.fromARGB(255, 84, 78, 80),
                 fontFamily: "Segoe UI",
                 fontWeight: FontWeight.w100,

@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:donna/class/package.dart';
 import 'package:donna/class/theme.dart';
+import 'package:donna/class/voids.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hovering/hovering.dart';
@@ -34,54 +35,58 @@ Widget sidebar(sidebarChildrenTop, sidebarChildrenBottom) => Container(
 // ----------- Sidebar Icons ------------ //
 // -------------------------------------- //
 
-Widget sidebaricon(title, assetName, inTitle, double size, Color color,
-        Color hoverColor, double xpadding, function) =>
-    Column(
-      children: [
-        InkWell(
-          onTap: function,
-          child: HoverContainer(
-            hoverColor: hoverColor,
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: Column(
-                children: [
-                  padding(10, 0, 0, 0),
-                  Row(
-                    children: [
-                      padding(0, 0, 10, 0),
-                      Stack(children: <Widget>[
-                        SvgPicture.asset(
-                          assetName,
-                          color: color,
-                          width: size,
-                        ),
-                        SizedBox(
-                          width: size,
-                          height: size,
-                          child: Center(
-                            child: Text(
-                              inTitle,
-                              style: TextStyle(
-                                color: Color(0xffffffff),
-                                fontWeight: FontWeight.bold,
+Widget sidebaricon(title, sidebariconisVisible, assetName, inTitle, double size,
+        Color color, double xpadding, function) =>
+    Visibility(
+      visible: sidebariconisVisible,
+      child: Column(
+        children: [
+          InkWell(
+            onTap: function,
+            child: HoverContainer(
+              hoverColor: hoverColor,
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: Column(
+                  children: [
+                    padding(10, 0, 0, 0),
+                    Row(
+                      children: [
+                        padding(0, 0, 10, 0),
+                        Stack(children: <Widget>[
+                          SvgPicture.asset(
+                            assetName,
+                            color: color,
+                            width: size,
+                            height: size,
+                          ),
+                          SizedBox(
+                            width: size,
+                            height: size,
+                            child: Center(
+                              child: Text(
+                                inTitle,
+                                style: TextStyle(
+                                  color: Color(0xffffffff),
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
+                        ]),
+                        padding(0, 0, 10, 0),
+                        Text(
+                          title,
+                          style: TextStyle(fontSize: 15, color: color),
                         ),
-                      ]),
-                      padding(0, 0, 10, 0),
-                      Text(
-                        title,
-                        style: TextStyle(fontSize: 15, color: color),
-                      ),
-                    ],
-                  ),
-                  padding(10, 0, 0, 0),
-                ],
+                      ],
+                    ),
+                    padding(10, 0, 0, 0),
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );

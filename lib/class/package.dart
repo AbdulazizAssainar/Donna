@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:donna/class/theme.dart';
+import 'package:donna/class/voids.dart';
 import 'package:flutter/material.dart';
 import 'sidebar.dart';
 
@@ -11,6 +12,7 @@ late Widget sidebarChildrenTop, sidebarChildrenBottom;
 
 late ThemeMode appTheme;
 bool isDarkMode = appTheme == ThemeMode.dark;
+bool isVisible = true;
 
 Widget padding(double top, double bottom, double left, double right) => Padding(
     padding:
@@ -89,21 +91,21 @@ Widget topbar(topbarChild) => Positioned(
       ),
     ));
 
-Widget innerbody(topbarChild, innerbodyChild) => Column(
+Widget innerbody(topbarChild, innerbodyChild, footerChild) => Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         topbar(topbarChild),
         innerbodyChild,
+        footerChild,
       ],
     );
 
 Widget body(sidebar1ChildrenTop, sidebar1ChildrenBottom, sidebar2ChildrenTop,
-        sidebar2ChildrenBottom, bool isVisible, topbarChild, innerbodyChild) =>
+        sidebar2ChildrenBottom, topbarChild, innerbodyChild, footerChild) =>
     Row(
       children: [
         Stack(children: [
           Visibility(
-            maintainState: true,
-            maintainAnimation: true,
             visible: isVisible,
             replacement: sidebar(sidebar2ChildrenTop, sidebar2ChildrenBottom),
             child: sidebar(sidebar1ChildrenTop, sidebar1ChildrenBottom),
@@ -111,7 +113,7 @@ Widget body(sidebar1ChildrenTop, sidebar1ChildrenBottom, sidebar2ChildrenTop,
         ]),
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [innerbody(topbarChild, innerbodyChild)],
+          children: [innerbody(topbarChild, innerbodyChild, footerChild)],
         )
       ],
     );
