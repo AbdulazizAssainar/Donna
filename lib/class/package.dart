@@ -3,7 +3,7 @@
 import 'package:donna/class/theme.dart';
 import 'package:donna/class/voids.dart';
 import 'package:flutter/material.dart';
-import 'sidebar.dart';
+import '../Widgets/sidebar.dart';
 
 late String language, settingup;
 late TextAlign apptextAlign;
@@ -12,7 +12,6 @@ late Widget sidebarChildrenTop, sidebarChildrenBottom;
 
 late ThemeMode appTheme;
 bool isDarkMode = appTheme == ThemeMode.dark;
-bool isVisible = true;
 
 Widget padding(double top, double bottom, double left, double right) => Padding(
     padding:
@@ -75,45 +74,11 @@ Widget maintextfield(width, labelText, bgcolor, ispassword) => SizedBox(
         ),
       ),
     );
-
-Widget topbar(topbarChild) => Positioned(
-    top: 0,
-    child: Container(
-      child: topbarChild,
-      height: 60,
-      width: screenwidth - (screenwidth * 0.2),
-      decoration: BoxDecoration(
-        border: Border(right: BorderSide(width: 2.0, color: borderColor)),
-        boxShadow: [
-          BoxShadow(color: shadowColor, blurRadius: 1, spreadRadius: 0),
-        ],
-        color: innerbodybg,
-      ),
-    ));
-
 Widget innerbody(topbarChild, innerbodyChild, footerChild) => Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         topbar(topbarChild),
         innerbodyChild,
         footerChild,
-      ],
-    );
-
-Widget body(sidebar1ChildrenTop, sidebar1ChildrenBottom, sidebar2ChildrenTop,
-        sidebar2ChildrenBottom, topbarChild, innerbodyChild, footerChild) =>
-    Row(
-      children: [
-        Stack(children: [
-          Visibility(
-            visible: isVisible,
-            replacement: sidebar(sidebar2ChildrenTop, sidebar2ChildrenBottom),
-            child: sidebar(sidebar1ChildrenTop, sidebar1ChildrenBottom),
-          ),
-        ]),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [innerbody(topbarChild, innerbodyChild, footerChild)],
-        )
       ],
     );
