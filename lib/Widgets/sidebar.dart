@@ -76,7 +76,7 @@ Widget sidebaricon(title, assetName, inTitle, double size, Color color,
                       padding(0, 0, 10, 0),
                       Text(
                         title,
-                        style: TextStyle(fontSize: 15, color: color),
+                        style: TextStyle(fontSize: appFontSize, color: color),
                       ),
                     ],
                   ),
@@ -89,34 +89,44 @@ Widget sidebaricon(title, assetName, inTitle, double size, Color color,
       ],
     );
 
-Tab sideTabIcon(text, double size, svgPicture, onTap) => Tab(
-        child: GestureDetector(
-      onTap: onTap,
-      child: Row(mainAxisSize: MainAxisSize.min, children: [
-        SvgPicture.asset(
-          svgPicture,
-          color: blue,
-          width: size,
-          height: size,
-        ),
-        const SizedBox(width: 10),
-        Text(
-          text,
-          style: TextStyle(color: blue),
-        ),
-      ]),
-    ));
-
-Widget topbar(topbarChild) => Positioned(
-    top: 0,
+Widget topbar(topbarChild) => SizedBox(
+    height: screenheight * 0.07,
     child: Container(
       child: topbarChild,
-      height: 60,
       decoration: BoxDecoration(
-        border: Border(right: BorderSide(width: 2.0, color: borderColor)),
+        color: innerbodybg,
+        border: Border(bottom: BorderSide(width: 2.0, color: borderColor)),
         boxShadow: [
           BoxShadow(color: shadowColor, blurRadius: 1, spreadRadius: 0),
         ],
-        color: innerbodybg,
       ),
     ));
+
+Widget topbaricon(title, assetName, inTitle, double size, Color color,
+        double xpadding, function) =>
+    Column(
+      children: [
+        InkWell(
+          onTap: function,
+          child: HoverContainer(
+            hoverColor: hoverColor,
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: SizedBox(
+                height: (screenheight * 0.07) - 2,
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                    child: Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: appFontSize, color: color),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );

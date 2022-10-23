@@ -99,13 +99,14 @@ class _CRHomePageState extends State<CRHomePage>
         ),
       ]),
       SizedBox(
-          width: screenwidth * 0.8,
-          child: Scaffold(
-            body: TabBarView(
-              controller: _tabController,
-              children: myTabs,
-            ),
-          ))
+        width: screenwidth * 0.8,
+        child: Scaffold(
+          body: TabBarView(
+            controller: _tabController,
+            children: myTabs,
+          ),
+        ),
+      )
     ]));
   }
 }

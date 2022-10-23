@@ -1,9 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:donna/Cafe-Restaurant/sales.dart';
-import 'package:donna/Widgets/sidebar.dart';
 import 'package:donna/class/package.dart';
-import 'package:donna/class/theme.dart';
 import 'package:flutter/material.dart';
 
 Tab crInventoryTab() {
@@ -25,8 +22,8 @@ class _CRInventoryPageState extends State<CRInventoryPage>
   }
 
   static List<Tab> myTabs = <Tab>[
-    crSalesTab(),
-    crInventoryTab(),
+    Tab(child: Text('data')),
+    Tab(child: Text('data')),
   ];
 
   late TabController _tabController;
@@ -45,48 +42,6 @@ class _CRInventoryPageState extends State<CRInventoryPage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Row(children: [
-      Stack(children: [
-        Visibility(
-          visible: isVisible,
-          child: sidebar(
-              Column(
-                children: [
-                  sidebaricon("Donna", "assets/icons/business_letter_bg.svg",
-                      "D", 30, Color(0xff852856), 20, () {}),
-                  padding(15, 0, 0, 0),
-                  sidebaricon("Sales", "assets/icons/home.svg", "", 20,
-                      sidebarIconsColorActive, 20, () {
-                    _tabController.animateTo(0);
-                  }),
-                  sidebaricon(
-                      "Inventort",
-                      "assets/icons/assignment_returned.svg",
-                      "",
-                      20,
-                      sidebarIconsColor,
-                      20, () {
-                    _tabController.animateTo(1);
-                  }),
-                ],
-              ),
-              Column(
-                children: [
-                  sidebaricon("Close", "assets/icons/close.svg", "", 20,
-                      sidebarIconsColorActive, 0, () {})
-                ],
-              )),
-        ),
-      ]),
-      SizedBox(
-          width: screenwidth * 0.8,
-          child: Scaffold(
-            body: TabBarView(
-              controller: _tabController,
-              children: myTabs,
-            ),
-          ))
-    ]));
+    return Scaffold(body: SizedBox(width: screenwidth * 0.8, child: Row()));
   }
 }

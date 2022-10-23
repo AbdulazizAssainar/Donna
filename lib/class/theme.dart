@@ -3,6 +3,8 @@
 import 'package:donna/class/package.dart';
 import 'package:flutter/material.dart';
 
+double appFontSize = 14;
+
 late Color sidebarbg,
     innerbodybg,
     outerbodybg,
