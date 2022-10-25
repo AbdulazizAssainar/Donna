@@ -2,8 +2,8 @@
 
 import 'dart:io';
 
-import 'package:donna/Cafe-Restaurant/inventory.dart';
-import 'package:donna/Cafe-Restaurant/sales.dart';
+import 'package:donna/pages/Cafe-Restaurant/inventory.dart';
+import 'package:donna/pages/Cafe-Restaurant/sales.dart';
 import 'package:donna/class/package.dart';
 import 'package:donna/class/voids.dart';
 import 'package:donna/Widgets/sidebar.dart';

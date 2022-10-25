@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
-import 'package:donna/Cafe-Restaurant/home.dart';
+import 'package:donna/pages/Cafe-Restaurant/home.dart';
 import 'package:donna/class/package.dart';
 import 'package:donna/class/theme.dart';
+import 'package:donna/pages/notes_page.dart';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(themeMode: ThemeMode.light, home: StartupPage());
+    return MaterialApp(themeMode: ThemeMode.light, home: MainsPage());
   }
 }
 
